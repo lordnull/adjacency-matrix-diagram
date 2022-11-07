@@ -6,6 +6,8 @@
             <div id="editor-outer" class="row">
                 <div id="editor" class="haft">
                     <textarea cols="30" rows="8" v-model="rawRooms"></textarea>
+                </div>
+                <div class="haft">
                     <p class="description">
                         - Input your room list, one room one line.<br>
                         - Your work will be auto saved in your local browser or you can download state file and load later.<br>
@@ -25,9 +27,10 @@
                         <label>Load saved state <input type="file" id="file" @change="handleStateFile"></label>
                     </div>
                 </div>
+            </div>
+            <div id="diagram">
 
-                <div id="diagram" class="haft">
-                    <svg width="500" height="500" id="svg-image">
+                    <svg :width="`${(length + rooms.length) * baseLengthUnit * 1.5 }`" :height="`${length * 15 * 3}`" id="svg-image">
                         <g v-for="(r, ri) in modelRooms" :key="'room-'+ri" :transform="r.g.transform" 
                             class="room-wrap"
                             :class="{active: isActive({ r, ri })}"
@@ -74,7 +77,6 @@
                             </g>
                         </g>     
                     </svg>
-                </div>
             </div>
         </div>
 
@@ -111,8 +113,12 @@
     #editor textarea {
         width: 100%;
     }
-    svg {
-        width: 100%;
+    #diagram {
+        overflow: scroll;
+    }
+    #svg-image {
+        display:  block;
+        max-width: none;
     }
 </style>
 
