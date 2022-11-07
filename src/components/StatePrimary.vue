@@ -6,8 +6,8 @@
 
 <style scoped>
     circle.state-primary {
-        fill: #000;
-        stroke: #000;
+        fill:  #43eb43;
+        stroke:  #43eb43;
     }
 </style>
 

@@ -6,8 +6,8 @@
 
 <style scoped>
     circle.state-secondary {
-        fill: #fff;
-        stroke: #000;
+        fill:  rgb(83, 236, 244);
+        stroke:  rgb(83, 236, 244);
     }
 </style>
 
