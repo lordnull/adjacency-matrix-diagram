@@ -30,7 +30,7 @@
             </div>
             <div id="diagram">
 
-                    <svg :width="`${(length + rooms.length) * baseLengthUnit * 1.5 }`" :height="`${(rooms.length + 1) * baseLengthUnit * 3}`" id="svg-image">
+                    <svg :width="`${(length + rooms.length + 20) * baseLengthUnit * 1.5 }`" :height="`${(rooms.length + 1) * baseLengthUnit * 3}`" id="svg-image">
                         <g v-for="(r, ri) in modelRooms" :key="'room-'+ri" :transform="r.g.transform" 
                             class="room-wrap"
                             :class="{active: isActive({ r, ri })}"
